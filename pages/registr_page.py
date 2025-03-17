@@ -9,7 +9,6 @@ class RegistrPage(BasePage):
     _locators = RegistLocators()
     _fake_data = FakeData()
 
-    @allure.step("Регистрация пользователя")
     def registration(self,
                      username=None,
                      full_name=None,

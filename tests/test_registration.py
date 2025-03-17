@@ -13,4 +13,5 @@ class TestRegistration:
         page = RegistrPage(driver)
         page.open(URLs.REGISTRATION_URL)
         page.registration()
-        assert page.get_h1_project_dashboard() == "Projects Dashboard"
+        with allure.step("Пользователь успешно зарегистрирован"):
+            assert page.get_h1_project_dashboard() == "Projects Dashboard"
