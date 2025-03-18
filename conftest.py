@@ -19,6 +19,7 @@ def chrome_options(request):
         options.add_argument("--window-size=1920,1080")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--ignore-certificate-errors")
+    options.add_argument("--disable-notifications")
     return options
 
 

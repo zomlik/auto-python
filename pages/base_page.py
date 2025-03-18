@@ -24,3 +24,6 @@ class BasePage:
     @allure.step("Получение текста")
     def get_text(self, locator: tuple) -> str:
         return self.find(locator).text
+
+    def current_url(self):
+        self.driver.current_url
