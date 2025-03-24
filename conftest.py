@@ -1,4 +1,6 @@
 import pytest
+import allure
+from datetime import datetime
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -31,3 +33,15 @@ def driver(chrome_options):
     )
     yield driver
     driver.quit()
+
+
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_makereport(item):
+    """Attach screenshots to allure report"""
+    outcome = yield
+    rep = outcome.get_result()
+    if rep.when == "call" and rep.failed:
+        browser = item.funcargs["browser"]
+        allure.attach(browser.get_screenshot_as_png(),
+                      name=f"Screenshot {datetime.now()}",
+                      attachment_type=allure.attachment_type.PNG)
