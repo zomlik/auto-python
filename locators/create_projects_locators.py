@@ -13,3 +13,4 @@ class Projects:
     CREATE_PROJECT_BUTTON = (By.XPATH, "//button[contains(text(), 'Create Project')]")
 
     PROJECT_NAME_H1 = (By.CSS_SELECTOR, ".backlog header h1")
+    PROJECT_KANBAN_NAME = (By.CSS_SELECTOR, "header h1 span")

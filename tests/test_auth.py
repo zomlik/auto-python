@@ -1,6 +1,8 @@
 import os
+
 import allure
 import pytest
+
 from pages.auth_page import AuthPage
 from utils.urls import URLs
 

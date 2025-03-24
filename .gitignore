@@ -85,3 +85,6 @@ venv.bak/
 
 # Allure
 allure-results
+
+# VS Code
+.vscode
