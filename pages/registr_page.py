@@ -15,23 +15,23 @@ class RegistrPage(BasePage):
                      email=None,
                      password=None
                      ):
-        with allure.step('Заполнить поле "username"'):
+        with allure.step('Заполнить поле Username'):
             self.find(self._locators.USERNAME_FIELD).send_keys(
                 self._fake_data.username if username is None else username
             )
-        with allure.step('Заполнить поле "full_name"'):
+        with allure.step('Заполнить поле Full Name"'):
             self.find(self._locators.FULL_NAME_FIELD).send_keys(
                 self._fake_data.full_name if full_name is None else full_name
             )
-        with allure.step('Заполнить поле "email"'):
+        with allure.step('Заполнить поле Email'):
             self.find(self._locators.EMAIL_FIELD).send_keys(
                 self._fake_data.email if email is None else email
             )
-        with allure.step('Заполнить поле "password"'):
+        with allure.step('Заполнить поле Password'):
             self.find(self._locators.PASSWORD_FIELD).send_keys(
                 self._fake_data.password if password is None else password
             )
-        with allure.step('Нажать на кнопку "Sing Up"'):
+        with allure.step('Нажать на кнопку Sing Up'):
             self.click(self._locators.SING_UP_BUTTON)
 
     def get_h1_project_dashboard(self):

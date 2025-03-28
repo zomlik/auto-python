@@ -1,10 +1,9 @@
 from api.taiga.common import TaigaApi
+from utils.urls import Routes
 
 
-class ListProject:
-    def __init__(self, client: TaigaApi):
-        self.client = client
+class ProjectsApi(TaigaApi):
+    _endpoints = Routes()
     
     def get_list_projects(self):
-        return self.client.get(endpoint="/api/v1/projects")
-    
+        return self.get(endpoint=self._endpoints.PROJECTS)

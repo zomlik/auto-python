@@ -4,3 +4,4 @@ webdriver_manager
 allure-pytest
 python-dotenv
 mimesis
+requests
