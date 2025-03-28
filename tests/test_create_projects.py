@@ -21,7 +21,7 @@ class TestCreateProject:
         page.login(login, password)
         assert page.get_h1_project_dashboard() == "Projects Dashboard"
 
-    @allure.step("Создание проекта Scrum")
+    @allure.title("Создание проекта Scrum")
     @pytest.mark.smoke
     def test_create_scrum_project(self, driver, login):
         name = "Scrum Project"

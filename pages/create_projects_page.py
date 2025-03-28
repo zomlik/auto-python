@@ -14,7 +14,7 @@ class CreateProjectsPage(BasePage):
     def create_scrum(self, name, description):
         with allure.step("Нажание на проект Scrum"):
             self.click(self._locators.SCRUM_PROJECT)
-        with allure.step("Заполнить поле Name"):
+        with allure.step(f"Заполнить поле Name {name}"):
             self.find(self._locators.NAME_FIELD).send_keys(name)
         with allure.step("Заполнить поле Description"):
             self.find(self._locators.DESCRIPTION_FIELD).send_keys(description)
@@ -24,7 +24,7 @@ class CreateProjectsPage(BasePage):
     def create_kanban(self, name, description):
         with allure.step("Нажатие на проект Kanban"):
             self.click(self._locators.KABAN_PROJECT)
-        with allure.step("Заполнить поле Name"):
+        with allure.step(f"Заполнить поле Name {name}"):
             self.find(self._locators.NAME_FIELD).send_keys(name)
         with allure.step("Заполнить поле Description"):
             self.find(self._locators.DESCRIPTION_FIELD).send_keys(description)
@@ -36,3 +36,4 @@ class CreateProjectsPage(BasePage):
 
     def get_h1_kanban_name(self):
         return self.get_text(self._locators.PROJECT_KANBAN_NAME)
+    
