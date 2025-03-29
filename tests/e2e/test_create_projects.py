@@ -22,6 +22,7 @@ class TestCreateProject:
         assert page.get_h1_project_dashboard() == "Projects Dashboard"
 
     @allure.title("Создание проекта Scrum")
+    @allure.testcase("ID-97")
     @pytest.mark.smoke
     def test_create_scrum_project(self, driver, login):
         page = CreateProjectsPage(driver)
@@ -32,6 +33,7 @@ class TestCreateProject:
             assert page.get_h1_project_name() == "Scrum"
     
     @allure.title("Создание проекта Kanban")
+    @allure.testcase("ID-98")
     @pytest.mark.smoke
     def test_create_kanban_project(self, driver, login):
         page = CreateProjectsPage(driver)

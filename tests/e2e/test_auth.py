@@ -12,6 +12,7 @@ class TestAuth:
     url = URLs()
 
     @allure.title("Авторизация пользователя")
+    @allure.testcase("ID-94")
     @pytest.mark.smoke
     def test_auth(self, driver):
         login = os.getenv("LOGIN_TEST")

@@ -8,6 +8,7 @@ from utils.urls import URLs
 @allure.suite("Регистрация")
 class TestRegistration:
     @allure.title("Регистрация нового пользователя")
+    @allure.testcase("ID-91")
     @pytest.mark.smoke
     def test_create_new_user(self, driver):
         page = RegistrPage(driver)
@@ -15,3 +16,4 @@ class TestRegistration:
         page.registration()
         with allure.step("Пользователь успешно зарегистрирован"):
             assert page.get_h1_project_dashboard() == "Projects Dashboard"
+    
