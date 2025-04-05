@@ -1,6 +1,7 @@
 import allure
 import pytest
 
+from http import HTTPStatus
 from api.taiga.projects import ProjectsApi
 
 
@@ -12,5 +13,5 @@ class TestGetProjectsApi:
     def test_get_all_projects(self):
         r = ProjectsApi()
         r.get_list_projects()
-        assert r.status_code == 200
+        assert r.status_code == HTTPStatus.OK
         

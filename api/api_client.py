@@ -1,5 +1,6 @@
 import os
 from abc import ABC
+from http import HTTPMethod
 
 from requests import Session
 from requests.exceptions import RequestException
@@ -23,13 +24,13 @@ class ApiClient(ABC):
             raise e
     
     def get(self, endpoint: str, params: dict = None):
-        return self._send(method="GET", endpoint=endpoint, params=params)
+        return self._send(method=HTTPMethod.GET, endpoint=endpoint, params=params)
 
     def post(self, endpoint: str):
-        return self._send(method="POST", endpoint=endpoint)
+        return self._send(method=HTTPMethod.POST, endpoint=endpoint)
 
     def put(self):
-        pass
+        return self._send(method=HTTPMethod.PUT)
     
     def delete(self):
-        pass
+        return self._send(method=HTTPMethod.DELETE)
