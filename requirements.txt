@@ -5,3 +5,4 @@ allure-pytest
 python-dotenv
 mimesis
 requests
+pydantic

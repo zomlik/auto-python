@@ -9,4 +9,6 @@ class URLs:
 
 
 class Routes:
+    AUTH = "/auth"
+    REGISTRY = "/register"
     PROJECTS = "/projects"

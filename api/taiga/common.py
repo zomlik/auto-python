@@ -7,7 +7,7 @@ class TaigaApi(ApiClient):
 
     def auth(self, login: str, password: str):
         pass
-
+    
     @property
     def status_code(self):
         return self._response.status_code
