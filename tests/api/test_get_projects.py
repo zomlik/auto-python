@@ -1,12 +1,18 @@
+import os
+
+from http import HTTPStatus
+
 import allure
 import pytest
 
-from http import HTTPStatus
 from api.taiga.projects import ProjectsApi
 
 
 @allure.suite("Проекты API")
 class TestGetProjectsApi:
+    login = os.getenv("LOGIN_TEST")
+    password = os. getenv("PASSWORD_TEST")
+
     @allure.title("Получить список всех публичных проектов без фильтров")
     @allure.testcase("ID-101")
     @pytest.mark.smoke
