@@ -8,3 +8,5 @@ class RegistLocators:
     PASSWORD_FIELD = (By.XPATH, "//input[@name='password']")
     SING_UP_BUTTON = (By.CSS_SELECTOR, "button")
     ASSERT_PROJECT_DASHBOARD_H1 = (By.CSS_SELECTOR, ".duty-summary h1")
+
+    USERNAME_ERRORS = (By.XPATH, "//input[@name='username']/following-sibling::ul[1]/li")

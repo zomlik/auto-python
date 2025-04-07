@@ -28,3 +28,6 @@ class RegistrPage(BasePage):
 
     def get_h1_project_dashboard(self):
         return self.get_text(self._locators.ASSERT_PROJECT_DASHBOARD_H1)
+    
+    def username_errors(self):
+        return self.get_text(self._locators.USERNAME_ERRORS)
