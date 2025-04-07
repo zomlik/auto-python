@@ -9,12 +9,13 @@ class ProjectsApi(TaigaApi):
     
     @allure.step("Получить список проектов")
     def get_list_projects(self,
-                          member=None,
-                          members=None,
-                          is_looking_for_people=None,
-                          is_featured=None,
-                          is_backlog_activated=None,
-                          is_kanban_activated=None):
+                          member=None,  # member id
+                          members=None,  # member ids
+                          is_looking_for_people=None,  # the project is looking for new members
+                          is_featured=None,  # the project has been highlighted by the instance staff
+                          is_backlog_activated=None,  # backlog is active
+                          is_kanban_activated=None  # kanban is active
+                          ): 
         return self.get(endpoint=self._endpoints.PROJECTS,
                         params={"member": member,
                                 "members": members,

@@ -1,19 +1,16 @@
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field
+
 from utils.data_generator import FakeData as fake
 
 
-class Auth(BaseModel):
-    model_config = ConfigDict(populate_by_name=True)
-    
+class Auth(BaseModel):    
     username: str
     password: str
-    type: str = Field(default_factory="normal")
+    type: str = Field(default="normal")
 
 
 class PublicRegistry(BaseModel):
-    model_config = ConfigDict(populate_by_name=True)
-
-    type: str | None = Field(default_factory="public")
+    type: str | None = Field(default="public")
     username: str = Field(default_factory=fake.username)
     password: str = Field(default_factory=fake.password)
     email: str = Field(default_factory=fake.email)
@@ -29,4 +26,20 @@ class PrivateRegistry(BaseModel):
     password: str
     email: str
     full_name: str
+
+
+class RegistryResponse(BaseModel):
+    id: int
+    username: str
+    full_name: str
+    full_name_display: str
+    color: str
+    bio: str
+    lang: str
+    theme: str
+    timezone: str
+    is_active: bool
+    photo: str | None
+    big_photo: str | None
+    gravatar_id: str
     
