@@ -44,3 +44,10 @@ class ApiClient(ABC):
     
     def delete(self, endpoint: str):
         return self._send(method=HTTPMethod.DELETE, endpoint=endpoint)
+    
+    @property
+    def status_code(self):
+        return self._response.status_code
+    
+    def response_json(self):
+        return self._response.json()
