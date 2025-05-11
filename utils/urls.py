@@ -10,5 +10,7 @@ class URLs:
 
 class Routes:
     AUTH = "/auth"
-    REGISTRY = "/register"
+    REGISTRY = "/auth/register"
     PROJECTS = "/projects"
+    USERS = "/users"
+    USERS_ME = "/users/me"
